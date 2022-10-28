@@ -1,0 +1,19 @@
+ow_weather dict_keys(['main', 'weather', 'clouds', 'wind', 'visibility', 'pop', 'sys', 'dt_txt'])
+ocean_weather dict_keys(['timestamp', 'utcOffset', 'surf', 'swells'])
+
+Logic:
+enter postcode and data is selected for weather and closest beach,
+from openweather.api and surfline scrape saves in dict with key=unix_timestamp.
+
+openweather gives 3 hour intervals of time.
+
+> check if first timestamp is suitable for activity.
+>> if not move to next timestampe
+>> if it is see if next timestamp is suitable (saving timestamp)
+>>> if not disregard
+>>> if it is continue until it is unsuitable (or outside of daylight).
+>>> return the unix_timestamp period that activity is suitable for
+
+if two activities of the same branch are present. choose the optimal. ('cycling' over 'winter cycling').
+
+
